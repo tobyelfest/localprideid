@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Local Pride ID</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0b0b0b; }
+        .sidebar { background: #121212; border-right: 1px solid #2a2a2a; }
+        .card-glass { background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(8px); border: 1px solid #2a2a2a; }
+        .input-dark { background: #1a1a1a; border: 1px solid #333; color: #f0f0f0; transition: 0.2s; }
+        .input-dark:focus { border-color: #d4a373; outline: none; box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2); }
+        .btn-amber { background: linear-gradient(145deg, #d4a373, #b5835a); color: #0b0b0b; font-weight: 700; transition: 0.2s; }
+        .btn-amber:hover { transform: scale(1.02); background: #c4956a; }
+        .btn-danger { background: #dc3545; color: white; transition: 0.2s; }
+        .btn-danger:hover { background: #c82333; }
+        .btn-edit { background: #17a2b8; color: white; transition: 0.2s; }
+        .btn-edit:hover { background: #138496; }
+        .status-badge { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .status-active { background: #1e7e34; color: #d4edda; }
+        .status-inactive { background: #7e1e1e; color: #f8d7da; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #d4a373; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b5835a; }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- Halaman Login -->
+    <!-- ============================================================ -->
+    <div id="loginPage" class="min-h-screen flex items-center justify-center px-4">
+        <div class="card-glass rounded-3xl p-8 w-full max-w-md shadow-2xl">
+            <div class="text-center mb-8">
+                <i class="fas fa-shoe-prints text-5xl text-amber-400 mb-3"></i>
+                <h2 class="text-3xl font-extrabold text-white">Login Admin</h2>
+                <p class="text-gray-400 text-sm mt-1">Masuk untuk mengelola produk</p>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-5">
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-1">Username</label>
+                    <input type="text" id="username" class="input-dark w-full px-4 py-3 rounded-xl" placeholder="admin" required />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+                    <input type="password" id="password" class="input-dark w-full px-4 py-3 rounded-xl" placeholder="••••••••" required />
+                </div>
+                <button type="submit" class="btn-amber w-full py-3 rounded-xl text-lg">
+                    <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                </button>
+            </form>
+
+            <p class="text-center text-gray-500 text-xs mt-6">
+                <i class="fas fa-info-circle mr-1"></i> Default: admin / admin123
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Dashboard Admin (Sembunyi saat login) -->
+    <!-- ============================================================ -->
+    <div id="dashboardPage" class="hidden min-h-screen flex">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar w-64 min-h-screen flex-shrink-0 p-5 hidden md:block">
+            <div class="flex items-center gap-3 mb-10">
+                <i class="fas fa-shoe-prints text-2xl text-amber-400"></i>
+                <span class="text-xl font-extrabold text-white">LOCAL<span class="text-amber-400">PRIDE</span></span>
+            </div>
+
+            <nav class="space-y-2">
+                <a href="#" onclick="showSection('dashboard')" id="navDashboard" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-400/10 text-amber-400 transition">
+                    <i class="fas fa-th-large w-5"></i> Dashboard
+                </a>
+                <a href="#" onclick="showSection('products')" id="navProducts" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 transition">
+                    <i class="fas fa-box w-5"></i> Produk
+                </a>
+                <a href="#" onclick="showSection('addProduct')" id="navAddProduct" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:bg-white/5 transition">
+                    <i class="fas fa-plus-circle w-5"></i> Tambah Produk
+                </a>
+                <hr class="border-white/10 my-4" />
+                <a href="#" onclick="logout()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-400 hover:bg-red-500/10 transition">
+                    <i class="fas fa-sign-out-alt w-5"></i> Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 p-4 md:p-8 overflow-y-auto" style="max-height: 100vh;">
+
+            <!-- Header -->
+            <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                <div>
+                    <h1 id="pageTitle" class="text-2xl md:text-3xl font-extrabold text-white">Dashboard</h1>
+                    <p class="text-gray-400 text-sm">Selamat datang, Admin!</p>
+                </div>
+                <button onclick="logout()" class="md:hidden btn-danger px-4 py-2 rounded-lg text-sm">
+                    <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                </button>
+            </header>
+
+            <!-- ========================================================== -->
+            <!-- SECTION: DASHBOARD -->
+            <!-- ========================================================== -->
+            <div id="sectionDashboard" class="space-y-6">
+                <!-- Statistik -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="card-glass rounded-2xl p-6">
+                        <p class="text-gray-400 text-sm">Total Produk</p>
+                        <p id="totalProducts" class="text-3xl font-extrabold text-white">0</p>
+                    </div>
+                    <div class="card-glass rounded-2xl p-6">
+                        <p class="text-gray-400 text-sm">Kategori</p>
+                        <p id="totalCategories" class="text-3xl font-extrabold text-white">0</p>
+                    </div>
+                    <div class="card-glass rounded-2xl p-6">
+                        <p class="text-gray-400 text-sm">Produk Aktif</p>
+                        <p id="totalActive" class="text-3xl font-extrabold text-green-400">0</p>
+                    </div>
+                    <div class="card-glass rounded-2xl p-6">
+                        <p class="text-gray-400 text-sm">Terakhir Update</p>
+                        <p id="lastUpdate" class="text-sm font-medium text-white">-</p>
+                    </div>
+                </div>
+
+                <!-- Aktivitas Terakhir -->
+                <div class="card-glass rounded-2xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Aktivitas Terakhir</h3>
+                    <div id="recentActivity" class="space-y-3 text-sm text-gray-400">
+                        <p>Belum ada aktivitas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================================== -->
+            <!-- SECTION: DAFTAR PRODUK -->
+            <!-- ========================================================== -->
+            <div id="sectionProducts" class="hidden space-y-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <h2 class="text-xl font-bold text-white">Daftar Produk</h2>
+                    <button onclick="showSection('addProduct')" class="btn-amber px-4 py-2 rounded-xl text-sm">
+                        <i class="fas fa-plus mr-1"></i> Tambah Produk
+                    </button>
+                </div>
+
+                <!-- Tabel -->
+                <div class="card-glass rounded-2xl overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-300">
+                        <thead class="text-xs uppercase bg-white/5 text-gray-400">
+                            <tr>
+                                <th class="px-4 py-3">Gambar</th>
+                                <th class="px-4 py-3">Nama</th>
+                                <th class="px-4 py-3">Harga</th>
+                                <th class="px-4 py-3">Kategori</th>
+                                <th class="px-4 py-3 text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody">
+                            <!-- Diisi oleh JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ========================================================== -->
+            <!-- SECTION: TAMBAH / EDIT PRODUK -->
+            <!-- ========================================================== -->
+            <div id="sectionAddProduct" class="hidden">
+                <div class="card-glass rounded-2xl p-6 max-w-2xl mx-auto">
+                    <h2 id="formTitle" class="text-xl font-bold text-white mb-6">Tambah Produk Baru</h2>
+
+                    <form id="productForm" onsubmit="handleProductSubmit(event)" class="space-y-4">
+                        <input type="hidden" id="editId" value="" />
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Sepatu *</label>
+                            <input type="text" id="productName" class="input-dark w-full px-4 py-3 rounded-xl" placeholder="Contoh: Arsakala Heritage" required />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Harga (Rp) *</label>
+                            <input type="number" id="productPrice" class="input-dark w-full px-4 py-3 rounded-xl" placeholder="850000" required />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">URL Gambar *</label>
+                            <input type="url" id="productImage" class="input-dark w-full px-4 py-3 rounded-xl" placeholder="https://example.com/sepatu.jpg" required />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kategori</label>
+                            <select id="productCategory" class="input-dark w-full px-4 py-3 rounded-xl">
+                                <option value="Sneakers">Sneakers</option>
+                                <option value="Casual">Casual</option>
+                                <option value="Running">Running</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Boots">Boots</option>
+                                <option value="Other">Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Deskripsi Singkat</label>
+                            <textarea id="productDescription" rows="3" class="input-dark w-full px-4 py-3 rounded-xl" placeholder="Deskripsi produk..."></textarea>
+                        </div>
+
+                        <div class="flex gap-3 pt-3">
+                            <button type="submit" id="submitBtn" class="btn-amber px-6 py-3 rounded-xl flex-1">
+                                <i class="fas fa-save mr-2"></i> Simpan Produk
+                            </button>
+                            <button type="button" onclick="resetForm()" class="px-6 py-3 rounded-xl border border-white/20 text-gray-400 hover:bg-white/5 transition">
+                                Batal
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================================================ -->
+    <script>
+        // =============================================================
+        // 🔥 KONFIGURASI FIREBASE - MASUKKAN API KEY ANDA DI SINI 🔥
+        // =============================================================
+        const firebaseConfig = {
+            apiKey: "AIzaSyDummyKeyHarusDigantiDenganMilikAnda",
+            authDomain: "localprideid.firebaseapp.com",
+            projectId: "localprideid",
+            storageBucket: "localprideid.appspot.com",
+            messagingSenderId: "123456789012",
+            appId: "1:123456789012:web:abcdef123456"
+        };
+
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // =============================================================
+        //  VARIABLE GLOBAL
+        // =============================================================
+        let products = [];
+        let isEditing = false;
+
+        // =============================================================
+        //  LOGIN
+        // =============================================================
+        function handleLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // 🔐 Hardcode credentials (untuk demo sekolah)
+            if (username === 'admin' && password === 'admin123') {
+                document.getElementById('loginPage').classList.add('hidden');
+                document.getElementById('dashboardPage').classList.remove('hidden');
+                loadDashboard();
+            } else {
+                alert('❌ Username atau password salah! Gunakan: admin / admin123');
+            }
+        }
+
+        function logout() {
+            if (confirm('Yakin ingin logout?')) {
+                document.getElementById('loginPage').classList.remove('hidden');
+                document.getElementById('dashboardPage').classList.add('hidden');
+            }
+        }
+
+        // =============================================================
+        //  NAVIGASI SIDEBAR
+        // =============================================================
+        function showSection(section) {
+            // Sembunyikan semua section
+            ['Dashboard', 'Products', 'AddProduct'].forEach(s => {
+                document.getElementById('section' + s).classList.add('hidden');
+            });
+
+            // Tampilkan section yang dipilih
+            const sectionMap = {
+                'dashboard': 'sectionDashboard',
+                'products': 'sectionProducts',
+                'addProduct': 'sectionAddProduct'
+            };
+            document.getElementById(sectionMap[section]).classList.remove('hidden');
+
+            // Update title
+            const titles = {
+                'dashboard': 'Dashboard',
+                'products': 'Daftar Produk',
+                'addProduct': 'Tambah Produk'
+            };
+            document.getElementById('pageTitle').textContent = titles[section];
+
+            // Update active nav
+            ['navDashboard', 'navProducts', 'navAddProduct'].forEach(id => {
+                document.getElementById(id).classList.remove('bg-amber-400/10', 'text-amber-400');
+                document.getElementById(id).classList.add('text-gray-400');
+            });
+            const navMap = {
+                'dashboard': 'navDashboard',
+                'products': 'navProducts',
+                'addProduct': 'navAddProduct'
+            };
+            const activeNav = document.getElementById(navMap[section]);
+            activeNav.classList.add('bg-amber-400/10', 'text-amber-400');
+            activeNav.classList.remove('text-gray-400');
+
+            // Jika section produk, refresh tabel
+            if (section === 'products') renderProductTable();
+        }
+
+        // =============================================================
+        //  CRUD PRODUK KE FIRESTORE
+        // =============================================================
+
+        // Ambil semua produk dari Firestore
+        async function fetchProducts() {
+            try {
+                const snapshot = await db.collection('products').orderBy('createdAt', 'desc').get();
+                products = [];
+                snapshot.forEach(doc => {
+                    products.push({ id: doc.id, ...doc.data() });
+                });
+                return products;
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                return [];
+            }
+        }
+
+        // Tambah produk baru
+        async function addProduct(data) {
+            try {
+                const docRef = await db.collection('products').add({
+                    ...data,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                return { id: docRef.id, ...data };
+            } catch (error) {
+                console.error('Error adding product:', error);
+                throw error;
+            }
+        }
+
+        // Update produk
+        async function updateProduct(id, data) {
+            try {
+                await db.collection('products').doc(id).update(data);
+                return { id, ...data };
+            } catch (error) {
+                console.error('Error updating product:', error);
+                throw error;
+            }
+        }
+
+        // Hapus produk
+        async function deleteProduct(id) {
+            try {
+                await db.collection('products').doc(id).delete();
+                return true;
+            } catch (error) {
+                console.error('Error deleting product:', error);
+                throw error;
+            }
+        }
+
+        // =============================================================
+        //  RENDER TABLE PRODUK
+        // =============================================================
+        async function renderProductTable() {
+            const tbody = document.getElementById('productTableBody');
+            tbody.innerHTML = '<tr><td colspan="5" class="text-center py-8 text-gray-500">⏳ Memuat data...</td></tr>';
+
+            try {
+                await fetchProducts();
+
+                if (products.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" class="text-center py-8 text-gray-500">Belum ada produk. Tambahkan produk baru!</td></tr>';
+                    return;
+                }
+
+                let html = '';
+                products.forEach(p => {
+                    html += `
+                    <tr class="border-t border-white/5 hover:bg-white/5 transition">
+                        <td class="px-4 py-3">
+                            <img src="${p.image || 'https://placehold.co/60x60/1a1a1a/ffffff?text=No+Img'}" 
+                                 alt="${p.name}" 
+                                 class="w-14 h-14 rounded-lg object-cover border border-white/10"
+                                 onerror="this.src='https://placehold.co/60x60/1a1a1a/ffffff?text=Error'" />
+                        </td>
+                        <td class="px-4 py-3 font-medium text-white">${p.name || 'Tanpa Nama'}</td>
+                        <td class="px-4 py-3 text-amber-400 font-semibold">Rp ${(p.price || 0).toLocaleString('id-ID')}</td>
+                        <td class="px-4 py-3"><span class="status-badge status-active">${p.category || 'Umum'}</span></td>
+                        <td class="px-4 py-3">
+                            <div class="flex items-center justify-center gap-2">
+                                <button onclick="editProduct('${p.id}')" class="btn-edit px-3 py-1.5 rounded-lg text-xs">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button onclick="handleDelete('${p.id}')" class="btn-danger px-3 py-1.5 rounded-lg text-xs">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    `;
+                });
+                tbody.innerHTML = html;
+            } catch (error) {
+                tbody.innerHTML = `<tr><td colspan="5" class="text-center py-8 text-red-400">❌ Gagal memuat data: ${error.message}</td></tr>`;
+            }
+        }
+
+        // =============================================================
+        //  FORM: TAMBAH / EDIT PRODUK
+        // =============================================================
+        function resetForm() {
+            document.getElementById('editId').value = '';
+            document.getElementById('productName').value = '';
+            document.getElementById('productPrice').value = '';
+            document.getElementById('productImage').value = '';
+            document.getElementById('productCategory').value = 'Sneakers';
+            document.getElementById('productDescription').value = '';
+            document.getElementById('formTitle').textContent = 'Tambah Produk Baru';
+            document.getElementById('submitBtn').innerHTML = '<i class="fas fa-save mr-2"></i> Simpan Produk';
+            isEditing = false;
+            showSection('addProduct');
+        }
+
+        async function editProduct(id) {
+            try {
+                const doc = await db.collection('products').doc(id).get();
+                if (!doc.exists) {
+                    alert('Produk tidak ditemukan!');
+                    return;
+                }
+                const data = doc.data();
+                document.getElementById('editId').value = id;
+                document.getElementById('productName').value = data.name || '';
+                document.getElementById('productPrice').value = data.price || '';
+                document.getElementById('productImage').value = data.image || '';
+                document.getElementById('productCategory').value = data.category || 'Sneakers';
+                document.getElementById('productDescription').value = data.description || '';
+                document.getElementById('formTitle').textContent = '✏️ Edit Produk';
+                document.getElementById('submitBtn').innerHTML = '<i class="fas fa-save mr-2"></i> Update Produk';
+                isEditing = true;
+                showSection('addProduct');
+            } catch (error) {
+                alert('❌ Gagal memuat data produk: ' + error.message);
+            }
+        }
+
+        async function handleProductSubmit(e) {
+            e.preventDefault();
+
+            const id = document.getElementById('editId').value;
+            const name = document.getElementById('productName').value.trim();
+            const price = parseInt(document.getElementById('productPrice').value);
+            const image = document.getElementById('productImage').value.trim();
+            const category = document.getElementById('productCategory').value;
+            const description = document.getElementById('productDescription').value.trim();
+
+            if (!name || !price || !image) {
+                alert('⚠️ Nama, Harga, dan URL Gambar wajib diisi!');
+                return;
+            }
+
+            const data = { name, price, image, category, description };
+
+            try {
+                if (isEditing && id) {
+                    await updateProduct(id, data);
+                    alert('✅ Produk berhasil diupdate!');
+                } else {
+                    await addProduct(data);
+                    alert('✅ Produk berhasil ditambahkan!');
+                }
+                resetForm();
+                loadDashboard();
+                renderProductTable();
+                showSection('products');
+            } catch (error) {
+                alert('❌ Gagal menyimpan produk: ' + error.message);
+            }
+        }
+
+        async function handleDelete(id) {
+            if (!confirm('⚠️ Yakin ingin menghapus produk ini?')) return;
+
+            try {
+                await deleteProduct(id);
+                alert('✅ Produk berhasil dihapus!');
+                loadDashboard();
+                renderProductTable();
+            } catch (error) {
+                alert('❌ Gagal menghapus produk: ' + error.message);
+            }
+        }
+
+        // =============================================================
+        //  DASHBOARD STATISTIK
+        // =============================================================
+        async function loadDashboard() {
+            try {
+                await fetchProducts();
+
+                document.getElementById('totalProducts').textContent = products.length;
+
+                const categories = new Set(products.map(p => p.category).filter(Boolean));
+                document.getElementById('totalCategories').textContent = categories.size;
+
+                const active = products.filter(p => p.status !== 'inactive').length;
+                document.getElementById('totalActive').textContent = active;
+
+                const now = new Date();
+                document.getElementById('lastUpdate').textContent =
+                    now.toLocaleDateString('id-ID') + ' ' + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+
+                // Aktivitas terakhir (3 produk terakhir)
+                const activityDiv = document.getElementById('recentActivity');
+                if (products.length === 0) {
+                    activityDiv.innerHTML = '<p class="text-gray-500">Belum ada aktivitas.</p>';
+                } else {
+                    let html = '';
+                    products.slice(0, 3).forEach(p => {
+                        html += `
+                        <div class="flex items-center gap-3 border-b border-white/5 pb-2">
+                            <i class="fas fa-plus-circle text-green-400"></i>
+                            <span><strong class="text-white">${p.name}</strong> — Rp ${(p.price || 0).toLocaleString('id-ID')}</span>
+                        </div>
+                        `;
+                    });
+                    activityDiv.innerHTML = html;
+                }
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+            }
+        }
+
+        // =============================================================
+        //  INITIALIZATION
+        // =============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cek apakah sudah login (untuk keamanan session sederhana)
+            // Tampilkan halaman login dulu
+            document.getElementById('loginPage').classList.remove('hidden');
+            document.getElementById('dashboardPage').classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>
