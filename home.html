@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Documentation Framework tailwind css play cdn and flowbite -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <!-- Documentation Framework tailwind css play cdn dan flowbite -->
+
+    <!-- Connect Google Font "Koulen" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <!-- Connect Google Font "Koulen" -->
+
+    <!-- Connet Google Font "Poppins" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Connet Google Font "Poppins" -->
+
+    <!-- Link connect style eksternal css -->
+    <link rel="stylesheet" href="style/home_style.css">
+    <!-- Link connect style eksternal css -->
+
+    <!-- Link ini digunakan untuk mengcostume icon pada tab web -->
+    <link rel="icon" href="img/home/Logo.png">
+    <!-- Link ini digunakan untuk mengcostume icon pada tab web -->
+
+    <!-- Konfigurasi color, background color, dan font tailwind css -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        font1: '#ffffff',
+                        font2: '#2F1C19',
+                        font3: '#000000',
+                        font4: '#9ca3af'
+                    },
+                    backgroundColor: theme => ({
+                        ...theme('colors'),
+                        primary: '#B99470',
+                        secondary: '#ffffff',
+                        tertiary: '#2F1C19',
+                        kuarterner: '#000000'
+                    }),
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        koulen: ['Koulen', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <!-- Konfigurasi color, background color, dan font tailwind css -->
+</head>
+
+<body>
+    <!-- Header area isinya ada logo indoshoes, button toggle navbar responsive, navbar, search, button login, dan sign up -->
+    <header>
+        <!-- Navigasi area -->
+        <nav class="bg-primary font-poppins">
+            <div class="max-w-screen-1xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <!-- Logo indoshoes area -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="img/home/Logo.png" class="h-14 w-14" alt="Indo Shoes">
+                    <span class="self-center text-2xl font-extrabold whitespace-nowrap text-font1 items-center">INDO
+                        SHOES</span>
+                </div>
+                <!-- logo indoshoes area -->
+
+                <!-- button toggle navbar responsive area -->
+                <button data-collapse-toggle="navbar-multi-level" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none hover:bg-tertiary"
+                    aria-controls="navbar-multi-level" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+                <!-- button toggle navbar responsive area -->
+
+                <!-- Navbar area -->
+                <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+                    <ul
+                        class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 bg-tertiary md:bg-primary">
+                        <!-- Navbar home area -->
+                        <li>
+                            <!-- Navbar url menuju ke halaman home -->
+                            <a href="home.html"
+                                class="block py-2 px-3 text-white rounded md:text-font2 hover:text-white md:p-0 bg-kuarterner md:bg-transparent"
+                                aria-current="page">Home</a>
+                            <!-- Navbar url menuju ke halaman home -->
+                        </li>
+                        <!-- Navbar home area -->
+
+                        <!-- Navbar man dropdown area -->
+                        <li>
+                            <!-- Membuat button man ketika diklik akan muncul dropdown pilihan kategori shoes -->
+                            <button id="man" data-dropdown-toggle="dropdownNavbar_man"
+                                class="flex items-center justify-between w-full py-2 px-3 md:p-0 text-font1 md:hover:text-font2 hover:bg-gray-700 md:hover:bg-transparent rounded">Man
+                                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <!-- Membuat button man ketika diklik akan muncul dropdown pilihan kategori shoes -->
+
+                            <!-- Dropdown man menu pilihan shoes area-->
+                            <div id="dropdownNavbar_man"
+                                class="z-10 hidden font-normal bg-gray-700 divide-y rounded-lg shadow w-44 divide-gray-500">
+                                <div class="py-1">
+                                    <h1 class="block px-4 py-2 text-sm text-font1 text-center">
+                                        SHOES</h1>
+                                </div>
+                                <ul class="py-2 text-sm text-font1 text-center" aria-labelledby="dropdownLargeButton">
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Man Sneakers -->
+                                        <a href="page/man_sneakers.html"
+                                            class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Sneakers</a>
+                                        <!-- Navbar url menuju ke halaman Man Sneakers -->
+                                    </li>
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Man Sports -->
+                                        <a href="page/man_sports.html"
+                                            class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Sports</a>
+                                        <!-- Navbar url menuju ke halaman Man Sports -->
+                                    </li>
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Man Running -->
+                                        <a href="page/man_running.html"
+                                            class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Running</a>
+                                        <!-- Navbar url menuju ke halaman Man Running -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown man menu pilihan shoes area-->
+                        </li>
+                        <!-- Navbar man dropdown area -->
+
+                        <!-- Navbar women dropdown area -->
+                        <li>
+                            <!-- Membuat button women ketika diklik akan muncul dropdown pilihan kategori shoes -->
+                            <button id="women" data-dropdown-toggle="dropdownNavbar_women"
+                                class="flex items-center justify-between w-full py-2 px-3 md:p-0 text-font1 md:hover:text-font2 hover:bg-gray-700 md:hover:bg-transparent rounded">Women
+                                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <!-- Membuat button women ketika diklik akan muncul dropdown pilihan kategori shoes -->
+
+                            <!-- Dropdown women menu pilihan shoes area-->
+                            <div id="dropdownNavbar_women"
+                                class="z-10 hidden font-normal bg-gray-700 divide-y rounded-lg shadow w-44 divide-gray-500">
+                                <div class="py-1">
+                                    <h1 class="block px-4 py-2 text-sm text-font1 text-center">
+                                        SHOES</h1>
+                                </div>
+                                <ul class="py-2 text-sm text-font1 text-center" aria-labelledby="dropdownLargeButton">
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Women Sneakers -->
+                                        <a href="page/women_sneakers.html"
+                                            class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Sneakers</a>
+                                        <!-- Navbar url menuju ke halaman Women Sneakers -->
+                                    </li>
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Women Sports -->
+                                        <a href="page/women_sports.html"
+                                            class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Sports</a>
+                                        <!-- Navbar url menuju ke halaman Women Sports -->
+                                    </li>
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Women Running -->
+                                        <a href="page/women_running.html"
+                                            class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Running</a>
+                                        <!-- Navbar url menuju ke halaman Women Running -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown women menu pilihan shoes area-->
+                        </li>
+                        <!-- Navbar women dropdown area -->
+
+                        <!-- Navbar local brand dropdown area -->
+                        <li>
+                            <!-- Membuat button local brand ketika diklik akan muncul dropdown pilihan brand local shoes -->
+                            <button id="brand" data-dropdown-toggle="dropdownNavbar_localbrand"
+                                class="flex items-center justify-between w-full py-2 px-3 md:p-0 text-font1 md:hover:text-font2 hover:bg-gray-700 md:hover:bg-transparent rounded">Local
+                                Brands
+                                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <!-- Membuat button local brand ketika diklik akan muncul dropdown pilihan brand local shoes -->
+
+                            <!-- Dropdown local brand menu pilihan brand local area-->
+                            <div id="dropdownNavbar_localbrand"
+                                class="z-10 hidden font-normal bg-gray-700 divide-y rounded-lg shadow w-44 divide-gray-500">
+                                <div class="py-1">
+                                    <h1 class="block px-4 py-2 text-sm text-font1 text-center">
+                                        BRAND</h1>
+                                </div>
+                                <ul class="py-2 text-sm text-font1 text-center" aria-labelledby="dropdownLargeButton">
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Brand Local Johnson -->
+                                        <a href="page/localbrand_johnson.html" class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Johnson</a>
+                                        <!-- Navbar url menuju ke halaman Brand Local Johnson -->
+                                    </li>
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Brand Local Athletica -->
+                                        <a href="page/localbrand_athletica.html"
+                                            class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Athletica</a>
+                                        <!-- Navbar url menuju ke halaman Brand Local Athletica -->
+                                    </li>
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Brand Local Aero Street -->
+                                        <a href="page/localbrand_aerostreet.html" class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Aero
+                                            Street</a>
+                                        <!-- Navbar url menuju ke halaman Brand Local Aero Street-->
+                                    </li>
+                                    <li>
+                                        <!-- Navbar url menuju ke halaman Brand Local Compass -->
+                                        <a href="page/localbrand_compass.html" class="block pl-1 py-2 mx-3 hover:bg-kuarterner rounded">Compass</a>
+                                        <!-- Navbar url menuju ke halaman Brand Local Compass -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown local brand menu pilihan brand local area-->
+                        </li>
+                        <!-- Navbar local brand dropdown area -->
+                    </ul>
+                </div>
+                <!-- Navbar area -->
+
+                <div class="flex">
+                    <!-- Search area -->
+                    <form class="max-w-md mx-auto mr-4">
+                        <label for="default-search" class="mb-2 sr-only">Search</label>
+                        <div class="relative">
+                            <!-- Icon search area -->
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <!-- Icon search area -->
+
+                            <!-- Input text untuk search -->
+                            <input type="search" id="default-search"
+                                class="block w-full p-4 ps-10 text-sm rounded-lg placeholder text-black"
+                                placeholder="Search Shoes, Brand..." required />
+                            <!-- Input text untuk search -->
+                        </div>
+                    </form>
+                    <!-- Search area -->
+
+                    <!-- Button login area -->
+                    <button type="button"
+                        class="px-5 py-2.5 text-sm font-medium text-white inline-flex items-center bg-kuarterner hover:bg-gray-700 rounded-lg text-center mr-4 max-[500px]:text-xs">
+                        <!-- Icon login akun -->
+                        <svg class="w-7 h-7 me-2" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="50" height="50" fill="url(#pattern0_67_33)" />
+                            <defs>
+                                <pattern id="pattern0_67_33" patternContentUnits="objectBoundingBox" width="1"
+                                    height="1">
+                                    <use xlink:href="#image0_67_33" transform="scale(0.0111111)" />
+                                </pattern>
+                                <image id="image0_67_33" width="90" height="90"
+                                    xlink:href="data:image/png;base64,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" />
+                            </defs>
+                        </svg>
+                        <!-- Icon login akun -->
+                        Login
+                    </button>
+                    <!-- Button login area-->
+
+                    <!-- Button sign up area -->
+                    <button type="button"
+                        class="px-5 py-2.5 text-sm font-medium text-white inline-flex items-center bg-kuarterner hover:bg-gray-700 rounded-lg text-center max-[500px]:text-xs">
+                        Sign Up
+                    </button>
+                    <!-- Button sign up area -->
+                </div>
+            </div>
+        </nav>
+        <!-- Navigasi area -->
+    </header>
+    <!-- Header area isinya ada logo indoshoes, button toggle navbar responsive, navbar, search, button login, dan sign up -->
+
+    <!-- Content area isinya ada image content shoes "tulisan quot", content tulisan quot "indonesia shoes", deskripsi indonesian shoes, shoes highlights carousel dan tulisan quot "Explore this website to add to your experience about Indonesian shoes."-->
+    <main>
+        <!-- Image content shoes "tulisan quot", content tulisan quot "indonesia shoes", dan deskripsi indonesian shoes -->
+        <div>
+            <!-- Image content shoes "tulisan quot" -->
+            <div class="flex">
+                <!-- Image content shoes area -->
+                <img src="img/home/Content.png" alt="" class="w-full">
+                <!-- Image content shoes area -->
+
+                <!-- Tulisan quot "Brand Local Shoes" area -->
+                <section class="absolute font-koulen">
+                    <!-- tulisan brand local -->
+                    <h2
+                        class="text-[100px] ml-8 font-bold text-font1 tracking-[5px] max-[768px]:text-[50px] max-[768px]:mt-5 max-[500px]:text-[25px]">
+                        BRAND</h2>
+                    <h2
+                        class="text-[100px] ml-8 font-bold text-font1 tracking-[5px] max-[768px]:text-[50px] max-[768px]:leading-[50px] max-[500px]:text-[25px] max-[500px]:leading-[25px] leading-[80px]">
+                        LOCAL</h2>
+                    <h2
+                        class="text-[100px] ml-8 font-bold text-font1 tracking-[5px] max-[768px]:text-[50px] max-[500px]:text-[25px]">
+                        SHOES</h2>
+                </section>
+                <!-- Tulisan quot "Brand Local Shoes" area -->
+
+                <!-- Tulisan quot "Step into Heritage,Stride with Style:Indonesian Footwear Elegance" screen tablet 640, laptop 1024, dan 1280 desktop area -->
+                <section
+                    class="absolute end-0 top-[780px] max-[1280px]:top-[670px] max-[1024px]:top-[600px] max-[640px]:top-[425px] max-[640px]:pr-[25px] px-10 text-center font-poppins">
+                    <p
+                        class="text-font1 italic text-[30px] max-[1280px]:text-[25px] max-[1024px]:text-[20px] max-[640px]:text-[13px]">
+                        “Step into Heritage, Stride with</p>
+                    <p
+                        class="text-font1 italic text-[30px] max-[1280px]:text-[25px] max-[1024px]:text-[20px] max-[640px]:text-[13px]">
+                        Style: Indonesian Footwear</p>
+                    <p
+                        class="text-font1 italic text-[30px] max-[1280px]:text-[25px] max-[1024px]:text-[20px] max-[640px]:text-[13px]">
+                        Elegance"</p>
+                </section>
+                <!-- Tulisan quot "Step into Heritage,Stride with Style:Indonesian Footwear Elegance" screen tablet 640, laptop 1024, dan 1280 desktop area -->
+            </div>
+            <!-- Image content shoes "tulisan quot" -->
+
+            <!-- Content tulisan quot "indonesia shoes" area -->
+            <div class="mt-[48px] mb-[48px]">
+                <!-- Tulisan "Show that your generation is the best with the shoes of your choice." area -->
+                <div class="font-poppins">
+                    <h2 class="text-center md:text-[10px] lg:text-[20px] font-semibold">Show that your generation is the
+                        best with the shoes
+                        of your choice.</h2>
+                </div>
+                <!-- Tulisan "Show that your generation is the best with the shoes of your choice." area -->
+
+                <!-- Tulisan indonesia shoes area -->
+                <div class="font-koulen m-0 p-0">
+                    <h2
+                        class="font-bold tracking-[1px] md:text-5xl lg:text-8xl text-font3 text-center align-middle justify-center">
+                        INDONESIAN</h2>
+                    <h2
+                        class="font-bold tracking-[1px] md:text-5xl lg:text-8xl text-font3 text-center align-middle justify-center">
+                        SHOES</h2>
+                </div>
+                <!-- Tulisan indonesia shoes area -->
+
+                <!-- Tulisan "Soar Higher with Local Shoes made in Indonesia." -->
+                <div class="font-poppins">
+                    <h2 class="text-center md:text-[10px] lg:text-[20px] font-semibold">Soar Higher with Local Shoes
+                        made in
+                        Indonesia.</h2>
+                </div>
+                <!-- Tulisan "Soar Higher with Local Shoes made in Indonesia." -->
+            </div>
+            <!-- Content tulisan quot "indonesia shoes" area -->
+
+            <!-- Deskripsi indonesian shoes -->
+            <div class="flex justify-center align-middle mb-[48px]">
+                <div class="max-w-[1430px] p-14 rounded-lg shadow-2xl bg-secondary font-poppins">
+                    <!-- Judul Indonesian Shoes area -->
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-font3">
+                        Indonesian Shoes
+                    </h5>
+                    <!-- Judul Indonesian Shoes area -->
+
+                    <!-- Paragraf deskripsi pertama area -->
+                    <p class="font-normal text-font3">
+                        Sepatu lokal Indonesia menampilkan keindahan dan
+                        keunikannya sendiri dalam desain, kerajinan tangan yang teliti, serta nilai-nilai budaya yang
+                        ditanamkan di dalamnya. Mereka sering kali memadukan unsur-unsur tradisional dengan sentuhan
+                        modern,
+                        menciptakan produk yang memikat baik dari segi visual maupun kualitasnya.
+                    </p>
+                    <!-- Paragraf deskripsi pertama area -->
+
+                    <!-- Paragraf deskripsi kedua area -->
+                    <p class="font-normal text-font3 mt-5">
+                        Desain sepatu lokal Indonesia sering kali terinspirasi oleh kekayaan alam dan warisan budaya
+                        yang
+                        dimiliki oleh negeri ini. Mereka mungkin mengambil motif-motif tradisional seperti batik, tenun,
+                        atau ukiran kayu, dan menggabungkannya dengan bahan-bahan inovatif dan teknologi produksi
+                        terkini
+                        untuk menciptakan produk yang unik dan berkualitas.
+                    </p>
+                    <!-- Paragraf deskripsi kedua area -->
+                </div>
+            </div>
+            <!-- Deskripsi indonesian shoes -->
+        </div>
+        <!-- Image content shoes "tulisan quot", content tulisan quot "indonesia shoes", dan deskripsi indonesian shoes -->
+
+        <!-- Shoes highlights carousel area -->
+        <div class="slide">
+            <!-- Tulisan quot "Shoes Highlights" area -->
+            <div class="shoes-text">
+                <h1>Shoes Highlights</h1>
+            </div>
+            <!-- Tulisan quot "Shoes Highlights" area -->
+
+            <!-- Image shoes carousel -->
+            <div class="slider-wrapper">
+                <div class="image-row">
+                    <img src="img/home/Carousel_1.png" alt="" class="image-items">
+                </div>
+                <div class="image-row">
+                    <img src="img/home/Carousel_2.png" alt="" class="image-items">
+                </div>
+                <div class="image-row">
+                    <img src="img/home/Carousel_3.png" alt="" class="image-items">
+                </div>
+                <div class="image-row">
+                    <img src="img/home/Carousel_4.png" alt="" class="image-items">
+                </div>
+                <div class="image-row">
+                    <img src="img/home/Carousel_5.png" alt="" class="image-items">
+                </div>
+                <div class="image-row">
+                    <img src="img/home/Carousel_6.png" alt="" class="image-items">
+                </div>
+            </div>
+            <!-- Image shoes carousel -->
+        </div>
+        <!-- Shoes highlights carousel area -->
+
+        <!-- Tulisan quot "Explore this website to add to your experience about Indonesian shoes." area -->
+        <div class="quot">
+            <h3>Explore this website to add to your experience about Indonesian shoes.</h3>
+        </div>
+        <!-- Tulisan quot "Explore this website to add to your experience about Indonesian shoes." area -->
+    </main>
+    <!-- Content area isinya ada image content shoes "tulisan quot", content tulisan quot "indonesia shoes", deskripsi indonesian shoes, shoes highlights carousel dan tulisan quot "Explore this website to add to your experience about Indonesian shoes."-->
+
+    <!-- footer area -->
+    <footer class="bg-black">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <!-- Content footer diatas garis horizontal area -->
+            <div class="md:flex md:justify-between">
+                <!-- Logo dan tulisan "INDO SHOES" area-->
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="img/home/Logo.png" class="h-12 me-3" alt="FlowBite Logo" />
+                        <span class="self-center text-2xl font-extrabold text-font1 font-poppins">INDO SHOES</span>
+                    </div>
+                </div>
+                <!-- Logo dan tulisan "INDO SHOES" area-->
+
+                <!-- Content pemisah resources, help, and legal. -->
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
+                    <!-- Content resource area -->
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase text-font1">Resources
+                        </h2>
+                        <ul class="text-font4 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Johnson</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Athletica</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold">‎
+                        </h2>
+                        <ul class="text-font4 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Aero Street</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Compass</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Content resource area -->
+
+                    <!-- Content help area -->
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase text-font1">Help
+                        </h2>
+                        <ul class="text-font4 font-medium">
+                            <li class="mb-4">
+                                <a href="home.html" class="hover:underline">Get Help</a>
+                            </li>
+                            <li>
+                                <a href="home.html" class="hover:underline">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Content help area -->
+
+                    <!-- Content legal area -->
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase text-font1">Legal</h2>
+                        <ul class="text-font4 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Content legal area -->
+                </div>
+                <!-- Content pemisah resources, help, and legal. -->
+            </div>
+            <!-- Content footer diatas garis horizontal area -->
+
+            <!-- Garis horizontal pemisah content atas dan bawah -->
+            <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8" />
+            <!-- Garis horizontal pemisah content atas dan bawah -->
+
+            <!-- Content footer dibawah garis horizontal area -->
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <!-- Copyright content area-->
+                <span class="text-sm sm:text-center text-font4">© 2024 <a href="home.html"
+                        class="hover:underline">Indoshoes™</a>. All Rights Reserved.
+                </span>
+                <!-- Copyright content area -->
+
+                <!-- Content footer icon -->
+                <div class="flex mt-4 sm:justify-center sm:mt-0">
+                    <!-- Icon facebook area -->
+                    <a href="home.html" class="text-gray-500 hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M17.525,9H14V7c0-1.032,0.084-1.682,1.563-1.682h1.868v-3.18C16.522,2.044,15.608,1.998,14.693,2C11.98,2,10,3.657,10,6.699V9H7v4l3-0.001V22h4v-9.003l3.066-0.001L17.525,9z" />
+                        </svg>
+                        <span class="sr-only">Facebook page</span>
+                    </a>
+                    <!-- Icon facebook area -->
+
+                    <!-- Icon Discord area -->
+                    <a href="home.html" class="text-gray-500 hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+                            fill="currentColor">
+                            <path
+                                d="M42.298,11.65c-0.676-1.021-1.633-1.802-2.768-2.256c-2.464-0.988-4.583-1.648-6.479-2.02	C31.721,7.114,30.404,7.768,29.771,9l-0.158,0.308c-1.404-0.155-2.895-0.207-4.593-0.164c-1.741-0.042-3.237,0.009-4.643,0.164	L20.22,9c-0.633-1.232-1.952-1.885-3.279-1.625c-1.896,0.371-4.016,1.031-6.479,2.02c-1.134,0.454-2.091,1.234-2.768,2.256	c-4.721,7.131-6.571,14.823-5.655,23.517c0.032,0.305,0.202,0.578,0.461,0.741c3.632,2.29,6.775,3.858,9.891,4.936	c1.303,0.455,2.748-0.054,3.517-1.229l1.371-2.101c-1.092-0.412-2.158-0.9-3.18-1.483c-0.479-0.273-0.646-0.884-0.373-1.363	c0.273-0.481,0.884-0.65,1.364-0.373c3.041,1.734,6.479,2.651,9.942,2.651s6.901-0.917,9.942-2.651	c0.479-0.277,1.09-0.108,1.364,0.373c0.273,0.479,0.106,1.09-0.373,1.363c-1.056,0.603-2.16,1.105-3.291,1.524l1.411,2.102	c0.581,0.865,1.54,1.357,2.528,1.357c0.322,0,0.647-0.053,0.963-0.161c3.125-1.079,6.274-2.649,9.914-4.944	c0.259-0.163,0.429-0.437,0.461-0.741C48.869,26.474,47.019,18.781,42.298,11.65z M18.608,28.983c-1.926,0-3.511-2.029-3.511-4.495	c0-2.466,1.585-4.495,3.511-4.495s3.511,2.029,3.511,4.495C22.119,26.954,20.534,28.983,18.608,28.983z M31.601,28.957	c-1.908,0-3.478-2.041-3.478-4.522s1.57-4.522,3.478-4.522c1.908,0,3.478,2.041,3.478,4.522S33.509,28.957,31.601,28.957z" />
+                        </svg>
+                        <span class="sr-only">Discord community</span>
+                    </a>
+                    <!-- Icon Discord area -->
+
+                    <!-- Icon TwitterX area -->
+                    <a href="home.html" class="text-gray-500 hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+                            fill="currentColor">
+                            <path
+                                d="M 6.9199219 6 L 21.136719 26.726562 L 6.2285156 44 L 9.40625 44 L 22.544922 28.777344 L 32.986328 44 L 43 44 L 28.123047 22.3125 L 42.203125 6 L 39.027344 6 L 26.716797 20.261719 L 16.933594 6 L 6.9199219 6 z" />
+                        </svg>
+                        <span class="sr-only">Twitterx page</span>
+                    </a>
+                    <!-- Icon TwitterX area -->
+
+                    <!-- Icon Instagram area -->
+                    <a href="home.html" class="text-gray-500 hover:text-white ms-5">
+                        <svg class="w-3.5 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 26 26">
+                            <path
+                                d="M 7.546875 0 C 3.390625 0 0 3.390625 0 7.546875 L 0 18.453125 C 0 22.609375 3.390625 26 7.546875 26 L 18.453125 26 C 22.609375 26 26 22.609375 26 18.453125 L 26 7.546875 C 26 3.390625 22.609375 0 18.453125 0 Z M 7.546875 2 L 18.453125 2 C 21.527344 2 24 4.46875 24 7.546875 L 24 18.453125 C 24 21.527344 21.53125 24 18.453125 24 L 7.546875 24 C 4.472656 24 2 21.53125 2 18.453125 L 2 7.546875 C 2 4.472656 4.46875 2 7.546875 2 Z M 20.5 4 C 19.671875 4 19 4.671875 19 5.5 C 19 6.328125 19.671875 7 20.5 7 C 21.328125 7 22 6.328125 22 5.5 C 22 4.671875 21.328125 4 20.5 4 Z M 13 6 C 9.144531 6 6 9.144531 6 13 C 6 16.855469 9.144531 20 13 20 C 16.855469 20 20 16.855469 20 13 C 20 9.144531 16.855469 6 13 6 Z M 13 8 C 15.773438 8 18 10.226563 18 13 C 18 15.773438 15.773438 18 13 18 C 10.226563 18 8 15.773438 8 13 C 8 10.226563 10.226563 8 13 8 Z" />
+                        </svg>
+                        <span class="sr-only">Instagram Page</span>
+                    </a>
+                    <!-- Icon Instagram area -->
+                </div>
+                <!-- Content footer icon -->
+            </div>
+            <!-- Content footer dibawah garis horizontal area -->
+        </div>
+    </footer>
+    <!-- footer area -->
+</body>
+
+</html>
