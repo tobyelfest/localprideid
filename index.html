@@ -1,435 +1,355 @@
-<!DOCTYPE html><html class="light" lang="id" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script id="tailwind-config">try{try{
+<!DOCTYPE html><html class="dark" lang="id" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;600;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "primary": "#000000",
-                        "surface-tint": "#5f5e5c",
-                        "error-container": "#ffdad6",
-                        "on-secondary-container": "#79572e",
-                        "surface-container": "#f1edec",
-                        "on-error-container": "#93000a",
-                        "secondary-fixed": "#ffddb9",
-                        "on-primary-fixed": "#1c1c1a",
-                        "tertiary-fixed": "#ffdbce",
-                        "secondary": "#7a582f",
-                        "on-primary-fixed-variant": "#474744",
-                        "secondary-fixed-dim": "#ecbe8d",
-                        "deep-charcoal": "#1A1A18",
-                        "inverse-primary": "#c9c6c3",
-                        "on-tertiary-fixed-variant": "#71361e",
-                        "surface-container-high": "#ebe7e6",
-                        "warm-clay": "#8C4B31",
-                        "surface-container-lowest": "#ffffff",
-                        "outline": "#777771",
-                        "rich-gold": "#C69C6D",
-                        "surface-container-highest": "#e5e2e1",
-                        "on-primary-container": "#858481",
-                        "surface-container-low": "#f7f3f2",
-                        "outline-variant": "#c8c7bf",
-                        "on-secondary": "#ffffff",
-                        "surface-bright": "#fdf8f7",
-                        "on-tertiary": "#ffffff",
-                        "limited-blue": "#72A0C1",
-                        "tertiary-fixed-dim": "#ffb59a",
-                        "surface-dim": "#ddd9d8",
-                        "on-background": "#1c1b1b",
-                        "inverse-on-surface": "#f4f0ef",
-                        "primary-fixed-dim": "#c9c6c3",
-                        "sand-neutral": "#E5E1D8",
-                        "on-tertiary-fixed": "#370e00",
-                        "tertiary": "#000000",
-                        "on-secondary-fixed-variant": "#5f401a",
-                        "on-primary": "#ffffff",
-                        "on-surface-variant": "#474741",
-                        "surface-variant": "#e5e2e1",
-                        "primary-fixed": "#e5e2de",
-                        "bone-white": "#F9F8F6",
-                        "primary-container": "#1c1c1a",
-                        "error": "#ba1a1a",
-                        "secondary-container": "#fecf9c",
-                        "on-error": "#ffffff",
-                        "on-secondary-fixed": "#2b1700",
-                        "on-tertiary-container": "#bb7154",
-                        "on-surface": "#1c1b1b",
-                        "surface": "#fdf8f7",
-                        "background": "#fdf8f7",
-                        "tertiary-container": "#370e00",
-                        "inverse-surface": "#313030"
+                        "outline": "#9a8f82",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-variant": "#353534",
+                        "primary-container": "#c5a374",
+                        "primary-fixed": "#ffddb1",
+                        "surface-bright": "#393939",
+                        "secondary-container": "#454747",
+                        "surface-container": "#201f1f",
+                        "on-primary-container": "#513913",
+                        "on-tertiary": "#313030",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#3e3d3d",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-background": "#e5e2e1",
+                        "on-error": "#690005",
+                        "surface": "#131313",
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-container": "#aaa8a8",
+                        "on-surface": "#e5e2e1",
+                        "surface-tint": "#e5c18f",
+                        "on-surface-variant": "#d1c4b7",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#e5c18f",
+                        "tertiary": "#c8c6c5",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed": "#291800",
+                        "outline-variant": "#4e453b",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#5b421c",
+                        "surface-dim": "#131313",
+                        "on-secondary": "#2f3131",
+                        "primary": "#e5c18f",
+                        "on-primary": "#422c07",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#b4b5b5",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#755a31",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#c6c6c7"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
                     },
                     "spacing": {
-                        "stack-md": "1.5rem",
-                        "stack-xl": "4rem",
-                        "margin-page": "max(5vw, 24px)",
-                        "section-padding": "5rem",
-                        "gutter-lg": "2rem",
-                        "gutter-sm": "1rem"
+                        "section-padding": "120px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "container-max-width": "1280px"
                     },
                     "fontFamily": {
                         "headline-md": ["Libre Caslon Text"],
-                        "body-md": ["Hanken Grotesk"],
-                        "price-tag": ["Hanken Grotesk"],
-                        "headline-lg": ["Libre Caslon Text"],
-                        "display-xl": ["Libre Caslon Text"],
-                        "display-xl-mobile": ["Libre Caslon Text"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "display-lg": ["Libre Caslon Text"],
                         "body-lg": ["Hanken Grotesk"],
-                        "label-caps": ["Hanken Grotesk"]
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Libre Caslon Text"]
                     },
                     "fontSize": {
-                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "price-tag": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "display-xl": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "display-xl-mobile": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
                         "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}]
                     }
                 },
             },
         }
-    }catch(_e){}}catch(_e){}</script></head><body class="bg-bone-white text-primary font-body-md selection:bg-black selection:text-white overflow-x-hidden">
-<!-- Top-->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-page h-20 glass-nav transition-all ease-in-out duration-300" id="main-header">
-<div class="flex items-center gap-gutter-lg">
-<span class="font-headline-lg text-headline-lg uppercase tracking-widest text-primary drop-shadow-sm">Local Pride ID</span>
-<nav class="hidden md:flex gap-gutter-sm items-center">
-<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#">Man</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Women</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-opacity duration-300" href="#">Brands</a>
-</nav>
-</div>
-<div class="flex items-center gap-gutter-sm">
-<div class="relative hidden sm:block">
-<input class="bg-transparent border-b border-primary py-1 px-2 focus:ring-0 focus:border-black transition-all duration-300 outline-none font-body-md text-sm w-40 focus:w-64" placeholder="Search brands..." type="text">
-<span class="material-symbols-outlined absolute right-2 top-1 text-on-surface-variant">search</span>
-</div>
-<button class="p-2 hover:opacity-70 transition-opacity"><span class="material-symbols-outlined">person</span></button>
-<button class="p-2 hover:opacity-70 transition-opacity"><span class="material-symbols-outlined">shopping_bag</span></button>
-</div>
-</header>
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="relative min-h-[90vh] w-full flex flex-col items-center justify-center pt-20 pb-10 bg-surface-container overflow-hidden">
-<!-- Background Shader -->
-<div class="absolute inset-0 z-0 opacity-50" id="shader-background-ANIMATION_1"><br></div>
+    }catch(_e){}</script></head><body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-background/95 backdrop-blur-md border-b border-outline-variant/20">
+        <div class="font-headline-md text-headline-md text-primary tracking-tighter">Local Pride ID</div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Shop</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Heritage</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Impact</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Brands</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#">Login</a>
+            <span class="material-symbols-outlined text-primary cursor-pointer">shopping_bag</span>
+        </div>
+    </nav>
 
-<div class="relative z-20 text-center px-margin-page max-w-5xl mb-16 pt-10">
-<h1 class="font-display-xl text-display-xl-mobile md:text-[80px] text-primary mb-8 fade-in-up delay-100 uppercase font-bold tracking-tight leading-none drop-shadow-sm">
-    LANGKAH BERANI, BANGGA LOKAL.
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-3xl mx-auto fade-in-up delay-300 bg-white/40 backdrop-blur-sm p-4 rounded-xl border border-white/20">Menyatukan keahlian pengrajin terbaik Indonesia dengan desain modern yang siap menemani setiap pergerakanmu. Rasakan kualitasnya langsung.</p>
-<div class="fade-in-up delay-500">
-<a class="inline-flex items-center gap-3 bg-primary text-white px-10 py-5 font-label-caps text-label-caps hover:bg-transparent hover:text-primary border border-primary transition-all duration-500 uppercase tracking-widest shadow-lg hover:shadow-xl group" href="#collection">
-                        Masuk ke Homepage
-                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
-</a>
-</div>
-</div>
+    <!-- Hero Section -->
+    <header class="min-h-screen pt-32 pb-section-padding flex flex-col items-center justify-center text-center px-gutter hero-gradient">
+        <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg max-w-4xl mb-stack-lg animate-fade-in">
+            LANGKAH BERANI, BANGGA LOKAL.
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-12">
+            Menyatukan keahlian pengrajin terbaik Indonesia dengan desain modern yang siap menemani setiap pergerakanmu. Rasakan kualitasnya langsung.
+        </p>
+        <button class="bg-primary-container text-on-primary-container px-10 py-4 font-label-caps text-label-caps flex items-center gap-3 hover:opacity-90 transition-all active:scale-95">
+            MASUK KE HOMEPAGE
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-24 w-full max-w-container-max-width">
+            <div class="editorial-border bg-surface-container p-10 group cursor-pointer hover:bg-surface-container-high transition-all">
+                <p class="font-label-caps text-label-caps tracking-widest text-primary mb-2">KASUAL</p>
+                <p class="font-label-caps text-[10px] opacity-60">LIHAT DETAIL</p>
+            </div>
+            <div class="editorial-border bg-surface-container p-10 group cursor-pointer hover:bg-surface-container-high transition-all">
+                <p class="font-label-caps text-label-caps tracking-widest text-primary mb-2">SPORT</p>
+                <p class="font-label-caps text-[10px] opacity-60">LIHAT DETAIL</p>
+            </div>
+            <div class="editorial-border bg-surface-container p-10 group cursor-pointer hover:bg-surface-container-high transition-all">
+                <p class="font-label-caps text-label-caps tracking-widest text-primary mb-2">FORMAL</p>
+                <p class="font-label-caps text-[10px] opacity-60">LIHAT DETAIL</p>
+            </div>
+        </div>
+    </header>
 
-<div class="w-full px-margin-page relative z-20 fade-in-up delay-700">
-    <div class="relative w-full h-[50vh] min-h-[450px] mb-12" id="threejs-container-ANIMATION_27"></div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center pb-12">
-        <div class="bg-white/60 backdrop-blur-md border border-white/50 p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group">
-            <h3 class="font-headline-md text-xl uppercase tracking-widest mb-4 group-hover:text-rich-gold transition-colors">Kasual</h3>
-            <a href="#" class="inline-block border-b border-primary font-label-caps text-xs tracking-widest pb-1 hover:opacity-60 transition-opacity uppercase">Lihat Detail</a>
+    <!-- Product Section -->
+    <section class="bg-on-background py-section-padding text-background">
+        <div class="max-w-container-max-width mx-auto px-gutter">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <p class="font-label-caps text-[10px] tracking-widest text-outline uppercase mb-2">Curated Selection</p>
+                    <h2 class="font-headline-lg text-headline-lg text-background">SHOP THE LOOK</h2>
+                </div>
+                <a class="font-label-caps text-label-caps text-background border-b border-background pb-1 hover:text-primary hover:border-primary transition-all" href="#">VIEW ALL +</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="group reveal-element reveal-stagger-1 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div class="aspect-[4/5] bg-white overflow-hidden relative p-8 flex items-center justify-center">
+                        <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 duration-500" data-alt="A studio photograph of a Compass Gazelle Low sneaker featuring traditional Batik heritage patterns on the canvas upper. The shoe is shot against a clean, minimalist white background with professional high-key lighting, emphasizing the craftsmanship and the unique Indonesian textile integration. Luxury footwear aesthetic, sharp focus, 8k resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJkVmTpnD1dZJhSUO3OWArJeIEhJEPwY5JXW5QOkE3MFNHb9HOrH79UMjX7P2ZWd2dFJRgnPSbAwzHQjejYelF3jgcv5gzU4CL6wJXABX_d_0WJwD8kb8s_Xk0vQjYFFBfIy3EGY63bfKoyVZzs9Zet_hhbfTbOM9dMrKKPMDCV0hQrMx_Z_utjzijK9cFAQ_tt3tcJOY1bVe8s6HBcR5L2qQ40fpa1T24X6tkg3nflZvO3lsagiSD2LjU0ZuANytieMqbspp8FLA">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10"><span class="material-symbols-outlined text-white text-[32px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500">visibility</span></div></div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-headline-md text-[20px] mb-1">Compass Gazelle Low</h3>
+                            <p class="font-label-caps text-[10px] text-outline uppercase">Batik Heritage</p>
+                        </div>
+                        <p class="font-body-md font-semibold">Rp 408.000</p>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="group reveal-element reveal-stagger-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div class="aspect-[4/5] bg-white overflow-hidden relative p-8 flex items-center justify-center">
+                        <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 duration-500" data-alt="Minimalist product shot of an Aero Street Classic sneaker in pristine white vulcanized canvas with a natural gum rubber sole. Centered on a soft-grey and white gradient background, reflecting a modern boutique display. Elegant lighting highlights the texture of the fabric and the clean lines of the design. Sophisticated editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdxOwAyHAH86aE9-CHAv94WhBE9q2QN_PbdbL25YUKYxgFz7lT18N2AMzDQ1Ed8A4LfP9i048-kT2FOlXsaLm-6VbFk8cCT3z8tnnoILEVv_sIcGDYPtfTdszM3nNBNqALh1n2mxrypWs-F_mQiroMcXyMRcajBBPwaBYpQhz4mBHD2Oo6dO-oj9Ygd5mmh80EETomy6qmHEX9ygBVd3fFdqlPLcrbQh0H2GjFf-K-t1LFKvtFl6eM1LITHKAm16IiRd49b__r3IY">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10"><span class="material-symbols-outlined text-white text-[32px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500">visibility</span></div></div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-headline-md text-[20px] mb-1">Aero Street Classic</h3>
+                            <p class="font-label-caps text-[10px] text-outline uppercase">Vulcanized Canvas</p>
+                        </div>
+                        <p class="font-body-md font-semibold">Rp 399.000</p>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="group reveal-element reveal-stagger-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div class="aspect-[4/5] bg-white overflow-hidden relative p-8 flex items-center justify-center">
+                        <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 duration-500" data-alt="A high-end sneaker known as the Johnson Galaxy featuring a modern silhouette with mixed material overlays in shades of cream and off-white. The shoe is presented on a reflective white surface, creating a subtle shadow and mirroring effect. The atmosphere is that of a premium tech-infused footwear gallery. Clean, bright, and upscale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYEHhrTXKpz1I2iVeGCrridspvoByedANtMXvjElB1FXtVfvNaTowC6FxW1RKC5D-ZcrUJcIxE-zRbkzgVWS4AlpBkVQauv-HzRoNJrxo-VlzQAfwj56ruWUHVG-y-JEguU4iZ8Ds4EmD0_RlCDiGMRFRWX1WTVNlzAg7sxYRWzGVS8PVZdqzWhgncHHWFHQOHmtXuJUMFoBRTg_PF8WgepYXTgcmQaycXsg-mg1vjexK8o2wbBS5zAKrdhgkZzLin5Q5hjyuvZEc">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10"><span class="material-symbols-outlined text-white text-[32px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500">visibility</span></div></div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-headline-md text-[20px] mb-1">Johnson Galaxy</h3>
+                            <p class="font-label-caps text-[10px] text-outline uppercase">Modern Silhouette</p>
+                        </div>
+                        <p class="font-body-md font-semibold">Rp 450.000</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bg-white/60 backdrop-blur-md border border-white/50 p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group">
-            <h3 class="font-headline-md text-xl uppercase tracking-widest mb-4 group-hover:text-rich-gold transition-colors">Sport</h3>
-            <a href="#" class="inline-block border-b border-primary font-label-caps text-xs tracking-widest pb-1 hover:opacity-60 transition-opacity uppercase">Lihat Detail</a>
-        </div>
-        <div class="bg-white/60 backdrop-blur-md border border-white/50 p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 group">
-            <h3 class="font-headline-md text-xl uppercase tracking-widest mb-4 group-hover:text-rich-gold transition-colors">Formal</h3>
-            <a href="#" class="inline-block border-b border-primary font-label-caps text-xs tracking-widest pb-1 hover:opacity-60 transition-opacity uppercase">Lihat Detail</a>
-        </div>
-    </div>
-</div>
-</section>
-<!-- Mission Section: LOCAL PRIDE ID -->
-<section class="py-section-padding px-margin-page bg-bone-white">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
-<div class="lg:col-span-5 reveal active">
-<span class="font-label-caps text-label-caps text-warm-clay tracking-widest block mb-4 uppercase">PLATFORM MISSION</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">LOCAL PRIDE ID</h2>
-<div class="space-y-6 text-on-surface-variant font-body-md">
-<p class="border-l-4 border-black pl-6">
-                            Local Pride ID adalah sebuah platform digital yang bertujuan untuk mengangkat brand lokal Indonesia melalui promosi, informasi, dan kolaborasi. Dengan menghubungkan pelaku usaha lokal dan masyarakat, platform ini bertujuan meningkatkan eksposur serta mendorong pertumbuhan ekonomi kreatif berbasis produk dalam negeri.
-                        </p>
-<p class="">
-                            Kami percaya bahwa setiap langkah dengan produk lokal adalah investasi untuk masa depan bangsa. Melalui kurasi yang ketat dan narasi yang kuat, kami membawa produk-produk terbaik dari pengrajin Indonesia ke garis depan industri fashion modern.
-                        </p>
-</div>
-</div>
-<div class="lg:col-span-7 relative reveal active">
-<div class="relative overflow-hidden group">
-<img alt="An Indonesian footwear artisan carefully stitching a canvas and leather sneaker in a traditional workshop with warm natural light." class="w-full aspect-[2.36] object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBou4WsESkxY1tmoQZhTDOJQnBZM_G-uRmSOyRBYcVj2x8i9GAoRV4HtxK_xk8jGkuLM9_Ot6gNpyEDcuFkFsj33CbwP-w5-BUoN_xq-o_u733wtlEJOqwDVeCsWEmaqRiSzJ7yXKM8Lh03JHSA5X4dpKjXn-lCSS2xPSssOQbuCr9oT1LwgCi6LObOTOzkXJaCsfs_5R9GKo6OHHfc4GkIv_PYszm8ssNvMgoxWS-pd5fHgzYwjkx1NUmOH9CNG-OlgV3liNvbZe0C">
-<div class="absolute bottom-4 right-4 bg-primary text-white p-6 md:p-8 reveal shadow-xl active">
-<span class="block font-headline-lg text-white">100%</span>
-<span class="font-label-caps text-label-caps tracking-widest text-outline-variant">KARYA ANAK BANGSA</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Economics Section -->
-<section class="bg-primary py-section-padding px-margin-page text-white">
-<div class="max-w-6xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg items-start">
-<div class="reveal active">
-<div class="flex items-center gap-4 mb-8">
-<span class="material-symbols-outlined text-white text-4xl">trending_up</span>
-<h2 class="font-headline-lg text-headline-lg text-white uppercase tracking-tighter">STABILITAS MELALUI KONTRIBUSI</h2>
-</div>
-<h3 class="font-headline-md text-headline-md mb-6 italic">Mengapa Memilih Lokal di Saat Rupiah Melemah?</h3>
-<p class="text-outline-variant font-body-md mb-8 max-w-md">
-                            Memilih produk lokal bukan sekadar tren gaya hidup, melainkan langkah strategis ekonomi. Terutama saat nilai tukar Rupiah berfluktuasi, konsumsi produk dalam negeri menjadi kunci untuk menjaga stabilitas ekonomi domestik.
-                        </p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter-sm reveal active">
-<div class="p-8 border border-outline/30 hover:border-white transition-colors duration-500 bg-surface-container/5 backdrop-blur-sm">
-<span class="material-symbols-outlined text-white mb-4 text-3xl">shield_with_heart</span>
-<h4 class="font-label-caps text-label-caps text-white mb-3 uppercase tracking-widest">Dukung Pengrajin</h4>
-<p class="text-sm text-outline-variant leading-relaxed">Membantu keberlangsungan bisnis UMKM dan seniman sepatu lokal di masa sulit.</p>
-</div>
-<div class="p-8 border border-outline/30 hover:border-white transition-colors duration-500 bg-surface-container/5 backdrop-blur-sm">
-<span class="material-symbols-outlined text-white mb-4 text-3xl">reduce_capacity</span>
-<h4 class="font-label-caps text-label-caps text-white mb-3 uppercase tracking-widest">Kurangi Impor</h4>
-<p class="text-sm text-outline-variant leading-relaxed">Menekan ketergantungan pada barang impor yang membebani neraca perdagangan.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Craftsmanship Section -->
-<section class="py-section-padding px-margin-page bg-white">
-<div class="grid grid-cols-1 gap-gutter-lg items-center mb-16">
-<div class="reveal active w-full">
-<span class="font-label-caps text-label-caps text-primary tracking-widest block mb-4">THE CRAFTSMANSHIP</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Dibuat di Indonesia, Dirancang untuk Bertahan Lama</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg mb-16">
-    <div class="space-y-6 group">
-        <div class="overflow-hidden aspect-[4/5] bg-surface-container-low"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQerEo-cXqYuj93xzggcYc2qN4WsAy4dUB4fHn0Mt4xTc7bhjRCVO_t1a46Dl_PYtMEoigtaID1pNtslPyiZDWp_r4Pb-nSIM76pR6DuLQsf_l-xWBDqZ6FSLy3xPeUGAfGL1IIHshbPn9Uo7eRriU1BcxYfeww4nYbE3swjLH-xFX-mpzCHl0ERHXm4KKhCU-SfIwFILqABU189-tN_2N58z7yd9tfnvi4zhe5Z1DhC3EZvXR4eeN6QFpdsAf5uzL6ZefvVD12ZbS" alt="A high-end, editorial close-up photograph of premium 12oz cotton canvas fabric and durable vulcanized rubber soles in a professional footwear workshop." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-lg"></div>
-        <div class="space-y-3">
-            <h4 class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Kualitas Bahan Tanpa Kompromi</h4>
-            <p class="text-sm text-on-surface-variant leading-relaxed">Menggunakan material kanvas premium dan teknik vulkanisasi terbaik yang menjamin ketahanan ekstra. Setiap jahitan diperiksa dengan teliti untuk memastikan sepatu Anda siap menghadapi berbagai medan perkotaan.</p>
-        </div>
-    </div>
-    <div class="space-y-6 group">
-        <div class="overflow-hidden aspect-[4/5] bg-surface-container-low">
-            <img src="https://lh3.googleusercontent.com/aida/AP1WRLvXKAv-57Iv1XOn0qoubdPMh5H0NFvHfnRWjpoIayTz0N3BQ-BwXbi_6T4w25NS6wYDurlfJfexKNwqcNkykg24KnPeYb4DNz9066AUydeIsRN_L6hfXHhK-CWMVAfSUWXwNNmwQFGbrflXKA1NIRWLB5fdMCMACKdAGRevMwdqmr36gDPAzaA0OGU_rIxXdhxHiEbql2YmazxuPndSP_LxNyBbS-2VV9Il4LwyfLt_dhPbb3aP2-gLKUNf" alt="Clean studio shot of Compass Gazelle Low sneaker" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-        </div>
-        <div class="space-y-3">
-            <h4 class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Kenyamanan yang Disesuaikan</h4>
-            <p class="text-sm text-on-surface-variant leading-relaxed">Desain insole yang telah disesuaikan dengan anatomi kaki masyarakat Indonesia, dilengkapi dengan teknologi memory foam untuk memberikan pijakan yang empuk sepanjang hari tanpa rasa lelah.</p>
-        </div>
-    </div>
-    <div class="space-y-6 group">
-        <div class="overflow-hidden aspect-[4/5] bg-surface-container-low">
-            <img src="https://lh3.googleusercontent.com/aida/AP1WRLvjHrgLsEMqZPqB3jbSd__1F8986BaFpT1dWmDiIu5yho4CC5X_Tf2OPhm_18MuT1HQC1C90SNhZGsJBy24x1vj4w76Ehr55wWuvQAROQVGlFMSBHg3r_FAWiddHQXqYdtZ-iRQ0k-EGsXQ2TzLqbwkYGGLDBWnXKPb14SrgeR9OFXqx_L2K336l8tBx6DRQREMq-4aOtu_ZZtVtC0lCImPaW3RXj1mosMR2YVGKNhf5t3eptrbvARdTZY" alt="Indonesian footwear artisan at work" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-        </div>
-        <div class="space-y-3">
-            <h4 class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Lebih dari Sekadar Sepatu</h4>
-            <p class="text-sm text-on-surface-variant leading-relaxed">Setiap pasang sepatu yang Anda beli turut mendukung kesejahteraan pengrajin lokal dan memperkuat ekosistem ekonomi kreatif dalam negeri. Berjalan dengan bangga, melangkah dengan tujuan.</p>
-        </div>
-    </div>
-</div>
+    </section>
 
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="reveal overflow-hidden group active">
+    <!-- Platform Mission -->
+    <section class="bg-surface py-section-padding">
+        <div class="max-w-container-max-width mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <p class="font-label-caps text-[10px] tracking-widest text-primary uppercase mb-4">Platform Mission</p>
+                <h2 class="font-headline-lg text-headline-lg mb-8">LOCAL PRIDE ID</h2>
+                <div class="space-y-6 text-on-surface-variant font-body-md leading-relaxed">
+                    <p class="">Local Pride ID adalah sebuah platform digital yang bertujuan untuk mengangkat brand lokal sekadar nilai promosi, informasi, dan kolaborasi. Dengan menghubungkan pelaku usaha lokal dan masyarakat, platform ini bertujuan meningkatkan eksposur serta mendorong pertumbuhan ekonomi kreatif berbasis produk dalam negeri.</p>
+                    <p class="">Kami percaya bahwa setiap langkah dengan produk lokal adalah investasi untuk masa depan bangsa. Melalui kurasi yang ketat dan narasi yang kuat, kami membawa produk-produk terbaik dari pengrajin Indonesia ke garis depan industri fashion modern.</p>
+                </div>
+            </div>
+            <div class="relative group reveal-element">
+                <div class="aspect-video editorial-border overflow-hidden">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105 duration-500" data-alt="An atmospheric workshop scene featuring a master Indonesian artisan working in a sunlit studio filled with rolls of premium leather and traditional textile looms. The lighting is warm and golden, casting long shadows that highlight the dust motes and textures of the craft. A mix of heritage and modern design workspace. High contrast, cinematic photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCtG8e6JGkgOCPM4_oNT8pH7wIYbaAluIqmllsHHIGBE-ID54DGi3XpmoJGkQhcWrQm47WtjMAGMyoRMBi8JcOj-7Ucq7Grf7Gm-1fAQDIHGPSZmyjd6hNKI1gLyt8IKMY52vIjzWMhMBD-X8h4V70pqsAaVUCbmt8_sT-z1DU0gJivlXK67g1OknYQI-9QcoM8KVUw3aDfw4zaHRU8JWca5ot4m0Jledadjlzb6nR8VC_yr8OOZa0PyY4_tHnW0QbvfRJS43EU0Q">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10"><span class="material-symbols-outlined text-white text-[32px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500">arrow_forward</span></div></div>
+                <div class="absolute -bottom-10 -right-10 bg-surface-container-highest p-10 editorial-border max-w-[240px]">
+                    <h4 class="font-display-lg text-[48px] text-primary leading-none mb-2">100%</h4>
+                    <p class="font-label-caps text-[12px] tracking-tighter uppercase opacity-80">KARYA ANAK BANGSA</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-<div class="reveal overflow-hidden group pt-12 active">
-
-</div>
-</div>
-</div>
-</section>
-<!-- Highlights Section -->
-<section class="py-section-padding px-margin-page bg-bone-white" id="collection">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-gutter-sm reveal active">
-<div>
-<h2 class="font-display-xl-mobile md:text-headline-lg text-primary mb-2 uppercase tracking-tight">SHOES HIGHLIGHTS</h2>
-<div class="h-1 w-20 bg-primary"></div>
-</div>
-<p class="font-body-md text-on-surface-variant max-w-sm">Curated selection of our finest local footwear pieces, where heritage meets contemporary urban trends.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
-<!-- Product 1 -->
-<div class="group reveal active">
-<div class="relative overflow-hidden bg-white mb-6">
-<span class="absolute top-4 left-4 z-10 bg-primary text-white px-3 py-1 font-label-caps text-[10px] uppercase">New Arrival</span>
-<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A premium studio photograph of a Compass Gazelle Low sneaker, 'Batik Heritage' edition. The shoe is made of high-quality canvas featuring traditional blue and white Indonesian batik patterns. Minimalist aesthetic, clean studio lighting, sharp focus on the fabric texture and craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2JruckfIJRLICkUGs7DoZvAH7m-ZTOAz_L25IzHPusq4YXHta630_JCb9UBShvJ-vflDW4muu5PltrArEGK9R4ASYSmLZ0S1vqixQvKExRaB7r7nefAk6C_5k43WuNJtf9qUQkwitPT1Nm33RTfayZmpUIIoxoKxl4rRAL5aN0tTj6YpmrIHDgltC1hvN-PjTvEKPcAkocpImv-QIztlqVnBsYxHqCQB-5TvgEUyFBYy6uQ3x_Cf1ezMaw6lukLXp7R2hJcApteQA">
-<button class="absolute bottom-4 right-4 bg-primary text-white p-3 rounded-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-<span class="material-symbols-outlined">shopping_bag</span>
-</button>
-</div>
-<div class="space-y-1">
-<h4 class="font-headline-md text-headline-md text-primary">Compass Gazelle Low</h4>
-<p class="text-sm text-on-surface-variant">Vintage Heritage Edition</p>
-<p class="font-price-tag text-primary pt-2">Rp 408.000</p>
-</div>
-</div>
-<!-- Product 2 -->
-<div class="group reveal active"><div class="relative overflow-hidden bg-white mb-6"><span class="absolute top-4 left-4 z-10 bg-primary text-white px-3 py-1 font-label-caps text-[10px] uppercase">New Arrival</span><img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A studio photograph of a premium minimalist white canvas sneaker with natural gum sole." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4r957dysVp0dQHC2GUYC8sDFj2c_xwYfy807tQ9eS3nVM8R4GsMdP2W1vFRy6xBQJft8iYfE19qMdevoc5w7_-WfmlqMyFfzhuQTA9YUWtxujMYfk2JzDdVTWQFCrmqBaJG9XWpK0wpxZd-wUAkLEXaBtczr_ovTcnhxXF90Qzcc4-YOPw2-wNtCfSMA7EtCGsJX2wdkqVz3WxgQsNkwV2l89ZxpcCdeF1aWCvaER4zfGCpQMOkK3SCED2kWVgZs7hiG76t_VqTES"><button class="absolute bottom-4 right-4 bg-primary text-white p-3 rounded-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"><span class="material-symbols-outlined">shopping_bag</span></button></div><div class="space-y-1"><h4 class="font-headline-md text-headline-md text-primary">Aero Street Classic</h4><p class="text-sm text-on-surface-variant">Vulcanized Canvas</p><p class="font-price-tag text-primary pt-2">Rp 399.000</p></div></div>
-<!-- Product 3 -->
-<div class="group reveal active"><div class="relative overflow-hidden bg-white mb-6"><img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An artistic high-fashion shot of a chunky minimalist sneaker in monochromatic grey and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm9cXIkDLRVRHYBQieBuqhB9RYbFkxf6zXz2S1snQgTIr-LTNqvCtEaJ-kkjGZ615FFIbVkP0E_Gg5lIqa66zaQIIIA_dsmkD0goAUl0H1qedwVrbXAJRVYXrZlkL3O5a0zVoADcheRZVyyUvSus6QWvXIehYya2JuCsYwCnuMQa8xWniyhfkPkfPLl4cuwFFkMVvZFtKT1TvSP3wd0wcycmtlK2h3C8020AhGy1KjigdaD99q15d3jay8tGrCArAyjORF2VR_tkU2"><button class="absolute bottom-4 right-4 bg-primary text-white p-3 rounded-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"><span class="material-symbols-outlined">shopping_bag</span></button></div><div class="space-y-1"><h4 class="font-headline-md text-headline-md text-primary">Johnson Galaxy</h4><p class="text-sm text-on-surface-variant">Chunky Modern Silhouette</p><p class="font-price-tag text-primary pt-2">Rp 450.000</p></div></div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-section-padding px-margin-page bg-primary overflow-hidden relative">
-<div class="absolute inset-0 opacity-20 grayscale pointer-events-none">
-<div class="w-full h-full bg-[url('placeholder')] bg-cover bg-fixed bg-center" data-alt="An atmospheric background texture of stacked traditional Indonesian leather tanning tools and raw fabric rolls in a darkened studio. The image is low-key with rich dark tones and subtle highlights on wood and leather textures, creating a sense of history and depth."></div>
-</div>
-<div class="relative z-10 text-center max-w-3xl mx-auto reveal active">
-<h2 class="font-display-xl-mobile md:text-display-xl text-white mb-6 uppercase tracking-widest">TAKE THE FIRST STEP</h2>
-<p class="font-body-lg text-outline-variant mb-10 leading-relaxed italic">
-                    Discover the perfect blend of Indonesian tradition and contemporary style. Your heritage journey begins here.
+    <!-- Stabilitas Melalui Kontribusi -->
+    <section class="bg-surface-container-lowest py-section-padding">
+        <div class="max-w-container-max-width mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div class="flex flex-col justify-center">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="material-symbols-outlined text-primary text-[32px]">trending_up</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary">STABILITAS MELALUI KONTRIBUSI</h2>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-8 italic">Mengapa Memilih Lokal di Saat Rupiah Melemah?</h3>
+                <p class="text-on-surface-variant mb-12 max-w-lg">
+                    Memilih produk lokal bukan sekadar tren gaya hidup, melainkan langkah strategis ekonomi. Terutama saat nilai tukar Rupiah berfluktuasi, konsumsi produk dalam negeri menjadi kunci untuk menjaga stabilitas ekonomi domestik.
                 </p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-gutter-sm">
-<button class="w-full sm:w-auto bg-white text-primary px-10 py-4 font-label-caps text-label-caps hover:bg-outline-variant transition-all duration-500 uppercase tracking-widest font-bold">VIEW ALL BRANDS</button>
-<button class="w-full sm:w-auto border border-white text-white px-10 py-4 font-label-caps text-label-caps hover:bg-white hover:text-primary transition-all duration-500 uppercase tracking-widest">OUR STORY</button>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-primary border-t border-outline/30 text-white">
-<div class="w-full py-section-padding px-margin-page grid grid-cols-1 md:grid-cols-4 gap-gutter-lg">
-<div class="space-y-6">
-<span class="font-headline-md text-headline-md text-white block">Indo Shoes</span>
-<p class="text-outline-variant text-sm leading-relaxed max-w-xs">
-                    Elevating Indonesian footwear to the global stage. We curate the finest local craftsmanship, blending heritage soul with modern urban lifestyle. Heritage in every step, pride in every stride.
-                </p>
-<div class="flex gap-4">
-<a class="text-white hover:text-outline-variant transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
-<a class="text-white hover:text-outline-variant transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
-</div>
-</div>
-<div class="space-y-6">
-<h5 class="font-label-caps text-label-caps text-white uppercase tracking-widest border-b border-white pb-2 inline-block">Resources</h5>
-<ul class="space-y-3">
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Johnson</a></li>
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Athletica</a></li>
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Aero Street</a></li>
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Compass</a></li>
-</ul>
-</div>
-<div class="space-y-6">
-<h5 class="font-label-caps text-label-caps text-white uppercase tracking-widest border-b border-white pb-2 inline-block">Help</h5>
-<ul class="space-y-3">
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Get Help</a></li>
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Contact Us</a></li>
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Shipping</a></li>
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Returns</a></li>
-</ul>
-</div>
-<div class="space-y-6">
-<h5 class="font-label-caps text-label-caps text-white uppercase tracking-widest border-b border-white pb-2 inline-block">Legal</h5>
-<ul class="space-y-3">
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Privacy Policy</a></li>
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Terms of Service</a></li>
-<li class=""><a class="text-outline-variant hover:text-white transition-colors text-sm" href="#">Cookie Policy</a></li>
-</ul>
-</div>
-</div>
-<div class="px-margin-page py-8 border-t border-outline/10 text-center">
-<p class="text-xs text-outline-variant uppercase tracking-widest">© 2024 Indo Shoes Heritage. Powered by Local Pride ID. Cultivating Indonesian Excellence.</p>
-</div>
-</footer>
-<script>
-        // Reveal Animations on Scroll
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-surface-container p-8 editorial-border">
+                        <span class="material-symbols-outlined text-primary mb-4">handshake</span>
+                        <h4 class="font-label-caps text-label-caps mb-2 uppercase">Dukung Pengrajin</h4>
+                        <p class="text-[13px] text-on-surface-variant">Membantu keberlangsungan bisnis UMKM dan seniman lokal.</p>
+                    </div>
+                    <div class="bg-surface-container p-8 editorial-border">
+                        <span class="material-symbols-outlined text-primary mb-4">groups</span>
+                        <h4 class="font-label-caps text-label-caps mb-2 uppercase">Kurangi Impor</h4>
+                        <p class="text-[13px] text-on-surface-variant">Menekan ketergantungan pada barang luar negeri.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="aspect-[3/4] overflow-hidden grayscale reveal-element group">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Top-down artistic close-up of large rolls of premium raw leather in various earthy tones—terracotta, deep brown, and tan—stacked in a minimalist workshop. The focus is sharp on the texture of the edges, with a shallow depth of field. Professional studio lighting with a soft moody feel. Dark luxury aesthetic, 8k resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdk4PTfwH9D0KmvXuUtxZwT0776egeh0jPl8PkMuGQJsfJcr1KEfkk8QPEtwMVB7dpwsbKxBAJSkpAqruBIU8PdXXCIRLru24w3jHbN3nq4mpgHwMSstDvqCKDfkhZ4IwUZmlfKXZZUYia81ZuHIZ1GyPLqMFnJpO512Mk6eRZlqBR9NSogvlYFUzK1iKol32-K94POPp81A0d04WogfmZNZs7g4Qjk_W06cFsZobr3_WZwvgq2N9iKvu7FhFoOdie0LL5hI_3d6c">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10"><span class="material-symbols-outlined text-white text-[32px] translate-y-4 group-hover:translate-y-0 transition-transform duration-500">arrow_forward</span></div></div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="bg-surface py-section-padding">
+        <div class="max-w-container-max-width mx-auto px-gutter text-center">
+            <p class="font-label-caps text-[10px] tracking-widest text-primary uppercase mb-4">Sustainability</p>
+            <h2 class="font-headline-lg text-headline-lg mb-6">OUR IMPACT</h2>
+            <p class="text-on-surface-variant max-w-2xl mx-auto mb-20">Membangun ekosistem yang berkelanjutan untuk industri kreatif alas kaki Indonesia.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/10">
+                <div class="bg-surface py-16 px-8">
+                    <h3 class="font-display-lg text-[64px] mb-2">15k+</h3>
+                    <p class="font-label-caps text-label-caps text-outline uppercase">STEPS TAKEN</p>
+                </div>
+                <div class="bg-surface py-16 px-8">
+                    <h3 class="font-display-lg text-[64px] mb-2">20+</h3>
+                    <p class="font-label-caps text-label-caps text-outline uppercase">LOCAL BRANDS</p>
+                </div>
+                <div class="bg-surface py-16 px-8">
+                    <h3 class="font-display-lg text-[64px] mb-2">1.2k</h3>
+                    <p class="font-label-caps text-label-caps text-outline uppercase">ARTISANS SUPPORTED</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-section-padding bg-on-background text-background relative overflow-hidden">
+        <div class="max-w-container-max-width mx-auto px-gutter text-center relative z-10">
+            <h2 class="font-display-lg text-[80px] md:text-[100px] leading-tight mb-8">TAKE THE FIRST<br>STEP</h2>
+            <p class="font-body-lg italic max-w-xl mx-auto mb-16 opacity-70">
+                Discover the perfect blend of Indonesian tradition and contemporary style. Your heritage journey begins here.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <button class="bg-background text-on-background px-12 py-5 font-label-caps text-label-caps hover:bg-surface-variant transition-colors">VIEW ALL BRANDS</button>
+                <button class="border border-background px-12 py-5 font-label-caps text-label-caps hover:bg-background hover:text-on-background transition-all">OUR STORY</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest text-on-surface-variant py-20">
+        <div class="max-w-container-max-width mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div>
+                <h4 class="font-headline-md text-primary mb-6">LOCAL PRIDE ID</h4>
+                <p class="text-sm leading-relaxed opacity-70 mb-8">Elevating Indonesian footwear to the global stage. We curate the finest local craftsmanship, blending heritage soul with modern urban lifestyle.</p>
+                <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70">language</span>
+                    <span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70">settings</span>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-label-caps text-label-caps text-primary mb-6 uppercase">Resources</h5>
+                <ul class="space-y-4 text-sm">
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Latar Belakang Sepatu Lokal</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Filosofi Desain Indonesia</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Ekosistem Kreatif UMKM</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Brand Directory</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-label-caps text-label-caps text-primary mb-6 uppercase">Help</h5>
+                <ul class="space-y-4 text-sm">
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Get Help</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Shipping</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="">
+                <h5 class="font-label-caps text-label-caps text-primary mb-6 uppercase">Legal</h5>
+                <ul class="space-y-4 text-sm">
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                    <li class=""><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-container-max-width mx-auto px-gutter pt-12 border-t border-outline-variant/10 text-center">
+            <p class="font-label-caps text-[10px] tracking-widest opacity-40 uppercase">© 2024 LOCAL PRIDE ID. CULTIVATING INDONESIAN EXCELLENCE.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Entrance animations for images and product cards
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Stop observing once it's visible so it only runs once
+                    observer.unobserve(entry.target);
                 }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        // Initial check
-        reveal();
-
-        // Header Scroll Interaction
-        let lastScrollTop = 0;
-        const header = document.getElementById("main-header");
-        window.addEventListener("scroll", function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop && scrollTop > 200) {
-                header.classList.add("scroll-hide");
-            } else {
-                header.classList.remove("scroll-hide");
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
-
-        // Smooth scroll for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
             });
+        }, revealOptions);
+
+        document.querySelectorAll('.reveal-element').forEach(el => {
+            revealObserver.observe(el);
         });
-    </script>
-<script>
-(function() {
-  const container = document.getElementById('threejs-container-ANIMATION_27');
-  if (!container) return;
-  
-  const width = container.clientWidth || window.innerWidth;
-  const height = container.clientHeight || window.innerHeight;
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
-  camera.position.z = 5;
+        // Smooth reveal animations on scroll for generic sections (Legacy)
+        const observerOptions = {
+            threshold: 0.1
+        };
 
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setSize(width, height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  container.appendChild(renderer.domElement);
-
-  // Lighting
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-  scene.add(ambientLight);
-
-  const mainLight = new THREE.DirectionalLight(0xffffff, 1);
-  mainLight.position.set(5, 5, 5);
-  scene.add(mainLight);
-
-  const rimLight = new THREE.PointLight(0xffffff, 1.5); // White hint
-  rimLight.position.set(-5, -5, -2);
-  scene.add(rimLight);
-
-  // Group for the sneakers
-  const sneakersGroup = new THREE.Group();
-  scene.add(sneakersGroup);
-
-  // Materials (Black and White theme)
-  const charcoalMat = new THREE.MeshPhongMaterial({ color: 0x1a1a18, shininess: 50 });
-  const whiteMat = new THREE.MeshPhongMaterial({ color: 0xffffff, shininess: 30 });
-  const greyMat = new THREE.MeshPhongMaterial({ color: 0x888888, shininess: 80 });
-
-  function createSneaker(xOffset) {
-    const group = new THREE.Group();
-    
-    // Sole
-    const soleGeo = new THREE.BoxGeometry(1.6, 0.2, 0.7);
-    const sole = new THREE.Mesh(soleGeo, whiteMat);
-    sole.position.y = -0.35;
-    group.add(sole);
-
-    // Body
-    const bodyGeo = new THREE.BoxGeometry(1</script></body></html>
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                }
+            });
+        }, observerOptions);</script></body></html>
