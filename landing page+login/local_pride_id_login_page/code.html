@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "outline-variant": "#50453b",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "on-tertiary-container": "#3f403f",
+                        "background": "#131313",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "primary-fixed": "#ffdcbd",
+                        "tertiary-container": "#acacab",
+                        "on-surface-variant": "#d4c4b7",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e3e2e0",
+                        "surface-container-low": "#1b1c1c",
+                        "on-background": "#e4e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-fixed-dim": "#f0bd8b",
+                        "surface-tint": "#f0bd8b",
+                        "on-surface": "#e4e2e1",
+                        "surface": "#131313",
+                        "primary-container": "#d4a373",
+                        "on-secondary": "#313030",
+                        "outline": "#9c8e82",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-error": "#690005",
+                        "on-primary": "#482904",
+                        "inverse-on-surface": "#303030",
+                        "surface-container": "#1f2020",
+                        "surface-bright": "#393939",
+                        "inverse-primary": "#7d562d",
+                        "secondary-container": "#4a4949",
+                        "primary": "#f2be8c",
+                        "surface-container-highest": "#353535",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed": "#2c1600",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-primary-container": "#5b3912",
+                        "surface-variant": "#353535",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3130",
+                        "secondary": "#c8c6c5",
+                        "on-primary-fixed-variant": "#623f18",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary": "#c8c7c6",
+                        "on-secondary-container": "#bab8b7",
+                        "inverse-surface": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-xl": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "54px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopNavBar (JSON derived) -->
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit w-full sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-white/10 transition-all duration-300 ease-in-out">
+<div class="flex items-center">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary uppercase tracking-widest">Local Pride ID</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+
+
+
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">shopping_bag</button>
+<button class="material-symbols-outlined text-primary font-bold border-b border-primary pb-1 transition-opacity">person</button>
+</div>
+</nav>
+<main class="flex-grow flex flex-col md:flex-row">
+<!-- Left Side: Atmospheric Heritage Image -->
+<div class="hidden md:block md:w-1/2 relative overflow-hidden h-full min-h-[600px]">
+<div class="absolute inset-0 z-10 bg-gradient-to-r from-background/40 to-transparent"></div>
+<div class="absolute inset-0 z-0 scale-105 hover:scale-100 transition-transform duration-[3s] ease-out" data-alt="A moody, atmospheric close-up of a master Indonesian craftsman's hands weaving intricate patterns into a piece of traditional Tenun fabric. The lighting is low and cinematic, casting soft golden highlights on the textured fibers and the worn wooden loom. The color palette is rich with deep umbers, charcoal blacks, and muted sepia tones. The background is softly blurred, focusing entirely on the tactile, high-fidelity details of the artisan process, evoking a sense of timeless luxury and Indonesian heritage." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2XgG4XyHy2NiY8P0KJBd_2XQ2s6nb25e6Dt20x33A-raP38gyM7z4e42SG3_GHS7iz-7UL48LfH27K7XeNhy_S6UIwYTMJ-h6WDZ4cJZqk5QTS6R2rZ7Kn43IRbWHPDp5V7VFUu4C79ZpplZBg-rnEHAxqLbt0DwSWtkUPD8XLWfgaZTA8iMBbhuNcF0MBsLBeW2BT30lqETPk1nQIYL-nB_kkLJbZunkKfPe2y8ipzp25hpC3WdzU8FpgbEoc__zRTRGaQdOTn4')">
+</div>
+<div class="absolute bottom-margin-desktop left-margin-desktop z-20 max-w-sm">
+<p class="font-label-caps text-label-caps text-primary mb-2">HERITAGE PRESERVATION</p>
+<h2 class="font-headline-lg text-headline-lg text-white">Crafting the legacy of tomorrow.</h2>
+</div>
+</div>
+<!-- Right Side: Login Form -->
+<div class="w-full md:w-1/2 flex items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface-container-low">
+<div class="w-full max-w-md space-y-12">
+<header class="space-y-4">
+<h1 class="font-headline-xl text-headline-xl text-on-surface leading-tight">Masuk ke Akun Anda</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Continue your journey through Indonesian excellence.</p>
+</header>
+<form class="space-y-8" onsubmit="event.preventDefault();">
+<div class="space-y-6">
+<div class="group">
+<label class="block font-label-caps text-label-caps text-outline group-focus-within:text-primary transition-colors mb-2" for="email">EMAIL ADDRESS</label>
+<input class="w-full bg-transparent border-0 border-b border-outline/30 px-0 py-3 font-body-md text-body-md text-on-surface focus:ring-0 focus:border-primary transition-all placeholder:text-outline-variant" id="email" placeholder="name@example.com" required="" type="email">
+</div>
+<div class="group">
+<div class="flex justify-between items-center mb-2">
+<label class="block font-label-caps text-label-caps text-outline group-focus-within:text-primary transition-colors" for="password">PASSWORD</label>
+<a class="font-label-caps text-label-caps text-primary/80 hover:text-primary transition-colors" href="#">Forgot Password?</a>
+</div>
+<input class="w-full bg-transparent border-0 border-b border-outline/30 px-0 py-3 font-body-md text-body-md text-on-surface focus:ring-0 focus:border-primary transition-all placeholder:text-outline-variant" id="password" placeholder="••••••••" required="" type="password">
+</div>
+</div>
+<div class="space-y-6 pt-4">
+<button class="w-full bg-primary-container text-on-primary-container py-4 px-8 font-label-caps text-label-caps tracking-widest hover:brightness-110 active:scale-[0.98] transition-all duration-200" type="submit">
+                            LOGIN
+                        </button>
+<div class="relative py-2">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline/10"></div>
+</div>
+<div class="relative flex justify-center text-xs">
+<span class="bg-surface-container-low px-4 font-label-caps text-label-caps text-outline-variant">OR CONTINUE WITH</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<button class="flex items-center justify-center gap-2 border border-outline/20 py-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">public</span>
+<span class="font-label-caps text-label-caps">GOOGLE</span>
+</button>
+<button class="flex items-center justify-center gap-2 border border-outline/20 py-3 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span class="font-label-caps text-label-caps">APPLE</span>
+</button>
+</div>
+</div>
+</form>
+<footer class="pt-8 border-t border-outline/10 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        New to Local Pride ID? 
+                        <a class="text-primary font-semibold editorial-link ml-2" href="#">Create an account</a>
+</p>
+</footer>
+</div>
+</div>
+</main>
+<!-- Footer (JSON derived) -->
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/10 transition-opacity duration-200">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-headline-lg text-headline-lg text-primary">Local Pride ID</span>
+<p class="font-label-caps text-label-caps text-secondary dark:text-secondary">© 2024 Local Pride ID. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-caps text-label-caps text-outline dark:text-outline hover:text-primary transition-colors" href="#">Provenance</a>
+<a class="font-label-caps text-label-caps text-outline dark:text-outline hover:text-primary transition-colors" href="#">Craftsmanship</a>
+<a class="font-label-caps text-label-caps text-outline dark:text-outline hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="font-label-caps text-label-caps text-outline dark:text-outline hover:text-primary transition-colors" href="#">Terms</a>
+<a class="font-label-caps text-label-caps text-outline dark:text-outline hover:text-primary transition-colors" href="#">Privacy</a>
+</div>
+</footer>
+<script class="">
+        // Subtle focus interactions for the split-screen image
+        const inputs = document.querySelectorAll('input');
+        const heritageImage = document.querySelector('[data-alt]');
+        
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                heritageImage.style.transform = 'scale(1.02)';
+                heritageImage.style.opacity = '0.9';
+            });
+            input.addEventListener('blur', () => {
+                heritageImage.style.transform = 'scale(1.05)';
+                heritageImage.style.opacity = '1';
+            });
+        });
+    </script>
+
+</body></html>

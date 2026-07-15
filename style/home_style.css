@@ -1,0 +1,96 @@
+/* Melakukan style pada seluruh content page home */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Melakukan style pada seluruh content page home */
+
+/* Root ini berfungsi menyimpan value kedalam variabel dan ketika ingin menggunakannya tinggal melakukan pemanggilan variabelnya dengan diawali var(--nama_variabel--)*/
+:root {
+  /* Font color */
+  --font1--: #ffffff;
+  --font2--: #2f1c19;
+  --font3--: #000000;
+  --font4--: #9ca3af;
+  /* Background color */
+  --primary--: #b99470;
+  --secondary--: #ffffff;
+  --tertiary--: #2f1c19;
+  --kuarterner--: #000000;
+  --half--: #ababab;
+}
+/* Root ini berfungsi menyimpan value kedalam variabel dan ketika ingin menggunakannya tinggal melakukan pemanggilan variabelnya dengan diawali var(--nama_variabel--)*/
+
+/* Styleling image carousel area */
+/* 1.Melakukan styleling pada tulisan "Shoes Highlights" dan "Image shoes carousel" untuk mengatur jarak content luar dan memunculkan slider left dan right menggunakan "overflow-x"*/
+.slide {
+  overflow-x: auto;
+  margin: 10px 45px 0px 45px;
+}
+
+/* 2.Melakukan style pada tulisan "Shoes Highlights" */
+.shoes-text {
+  position: sticky;
+  left: 0;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+/* 3.Melakukan style pada "Image shoes carousel" agar posisinya menjadi row atau baris memanjang ke kanan */
+.slider-wrapper {
+  display: grid;
+  gap: 15px;
+  grid-auto-flow: column;
+  grid-auto-columns: 25%;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+/* 4.Melakukan style pada "Image shoes carousel" membuat image shoesnya mempunyai background berwarna abu-abu dan membuat jarak content didalam image menggunakan padding*/
+.image-items {
+  padding: 10px;
+  background-color: var(--half--);
+}
+
+/* 5.Melakukan style pada "Image shoes carousel" membuat tampilan ketika screen responsive maka image akan berurut kebawah menjadi column memanjang kebawah */
+.image-row {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 6.Melakukan style pada tulisan "Explore this website to add to your experience about Indonesian shoes." */
+.quot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0px 25px 0px;
+  font-size: 25px;
+  font-weight: 500;
+}
+/* Styleling image carousel area */
+
+/* Membuat halaman menjadi responsive device tablet area */
+@media screen and (max-width: 768px) {
+  .slider-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .image-row {
+    display: block;
+  }
+  .image-items {
+    width: 100%;
+  }
+  .shoes-text {
+    font-size: 25px;
+  }
+  .quot {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    font-size: 18px;
+  }
+}

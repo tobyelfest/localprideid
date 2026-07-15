@@ -1,0 +1,85 @@
+/* Mengatur gaya untuk elemen dengan class .shoes-content */
+.shoes-content {
+  margin-top: 3rem; /* Mengatur margin atas */
+  display: flex; /* Mengatur display menjadi flexbox */
+  flex-direction: column; /* Mengatur arah flex menjadi kolom */
+}
+
+/* Mengatur gaya untuk elemen dengan class .shoes-cese-container */
+.shoes-cese-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Mengatur gaya untuk elemen dengan class .shoes-other */
+.shoes-other{
+  display: flex;
+  justify-content: center;
+}
+
+/* Mengatur gaya untuk elemen dengan class .shoes-case */
+.shoes-case {
+  display: flex; /* Mengatur display menjadi flexbox */
+  flex-direction: row; /* Mengatur arah flex menjadi baris */
+  align-items: center; /* Menyelaraskan item di tengah secara vertikal */
+  justify-items: center;
+  gap: 2rem; /* Mengatur jarak antar item */
+}
+
+/* Mengatur gaya untuk elemen dengan class .case */
+.case {
+  border: 1px solid whitesmoke; /* Mengatur border */
+  padding: 0.8rem; /* Mengatur padding */
+  border-radius: 1rem; /* Mengatur border radius */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Mengatur bayangan */
+  transition: 0.3s; /* Mengatur transisi */
+  cursor: pointer; /* Mengatur kursor menjadi pointer */
+}
+
+/* Mengatur bayangan saat hover pada elemen dengan class .case */
+.case:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Mengatur bayangan */
+}
+
+/* Mengatur teks agar rata tengah untuk elemen dengan class .maybe-missed */
+.maybe-missed {
+  text-align: center; /* Mengatur teks agar rata tengah */
+  margin: 1rem 0; /* Mengatur margin atas dan bawah */
+}
+
+/* Mengatur margin atas untuk elemen dengan class .gender-tag */
+.gender-tag {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 62px;
+  margin-right: 62px;
+}
+
+/* Mengatur border radius untuk elemen dengan class .case-img */
+.case-img {
+  border-radius: 1rem; /* Mengatur border radius */
+}
+
+/* Mengatur gaya untuk elemen dengan class .product */
+.product {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  padding-top: 5px;
+}
+
+/* Mengatur gaya untuk elemen dengan class .qout */
+.quot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0px 25px 0px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* Mengatur font-family untuk elemen dengan class .quotes */
+.quotes {
+  font-family: "Koulen", sans-serif; /* Mengatur font-family */
+}

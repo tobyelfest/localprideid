@@ -1,0 +1,8 @@
+{
+  "name": "Local Pride ID",
+  "description": "Local Pride ID is a premium local sneaker brand curation and shopping platform, showcasing Indonesian craftsmanship and modern designs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
